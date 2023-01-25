@@ -1,16 +1,15 @@
-package Exercise01;
+package Exercise02;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Test {
     public static void main(String[] args) {
-        LocalDate now = LocalDate.now();
-        int endOfMonth = now.lengthOfMonth();
-        int remainingDaysOfTheMonth = endOfMonth - now.getDayOfMonth();
-        System.out.println("Days until end of the month: " + remainingDaysOfTheMonth);
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now.getDayOfMonth() + " " + now.getMonth() + " " + now.getYear() + " " + now.getHour() + ":" + now.getMinute());
 
-        int endOfYear = now.lengthOfYear();
-        int remainingDaysOfTheYear = endOfYear - now.getDayOfYear();
-        System.out.println("Days until end of the year: " + remainingDaysOfTheYear);
+        ZonedDateTime now1 = ZonedDateTime.now();
+        System.out.println(now1.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
     }
 }
